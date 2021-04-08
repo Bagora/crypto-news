@@ -2,19 +2,28 @@
 
 {% block content %}
 
-  <style>
-  .jumbotron {
-background-color:#ffffff !important;
+
+<style>
+.jumbotron {
+   background-color:#1a2421 !important;
+   color: #ffffff;
+   
+ }
+ 
+ table{
+	background-color:#1a2421 !important;
+    color: #ffffff;
 }
 </style>
-
+<br><br>
 <div class="jumbotron text-center" style="margin-bottom:0">
 <h1 class="display-4">Crypto News & Blockchain Network</h1>
 <p class="lead">Your Source For Information</p>
 </div>
 <br/>
 
-<table class="table table-bordered table-hover table-sm table-dark">
+<table class="table table-bordered table-hover table-dark">
+
   <tr>
       <th scope="col">Name </th>
       <th scope="col">Price </th>
@@ -51,7 +60,7 @@ background-color:#ffffff !important;
 			  		<div class="card-body">
 					<h5 class="card-title">{{ x.title }}</h5>
 			    	<p class="card-text">{{ x.body }}</p>
-			    	<a href= "{{ x.url }}" class="btn btn-primary">Read More</a>
+			    	<a href= "{{ x.url }}" class="btn btn-dark">Read More</a>
 				</div>
 			</div>
 			<br/>

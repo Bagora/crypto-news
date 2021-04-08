@@ -12,13 +12,18 @@
 
 	{% for key, value in crypto.DISPLAY.items %}
 
-	  <style>
-  .jumbotron {
-background-color:#f8f4ff !important;
+<style>
+  .jumbotron{
+    background-color:#1a2421 !important;
+	color: #ffffff;
+
+
 }
 </style>
 
+<br><br>
 		<div class="jumbotron">
+		
 			  <h1 class="display-4">{{ key }}</h1>
 			  <strong>Price</strong>: {{ value.USD.PRICE }}<br/>
 			  <strong>Day High</strong>: {{ value.USD.HIGHDAY }}<br/>
@@ -28,16 +33,11 @@ background-color:#f8f4ff !important;
 			  <strong>Supply</strong>: {{ value.USD.SUPPLY }}<br/>
 			  
 			  
-			  
-			  
-	  
 		</div>
+	 
 
 	{% endfor %}
 
 	{% endif %}
 
-  <br><br/>
-
-  
 {% endblock content %}

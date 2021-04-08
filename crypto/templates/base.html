@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script data-ad-client="ca-pub-7819352739980348" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="staticfiles/logo.png">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -13,7 +16,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1a2421">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffffff">
   <a class="navbar-brand" href="{% url 'home' %}">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,8 +32,8 @@
     </ul>
     <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'prices' %}">
       {% csrf_token %}
-      <input class="form-control mr-sm-2" type="search" placeholder="type here" aria-label="Search" name="quote">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" aria-label="Search" name="quote">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>

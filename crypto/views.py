@@ -5,7 +5,7 @@ def home(request):
 	import json
 
 	#get crypto price data
-	price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,BCH,BSV,USDT,EOS,LTC,BNB,ADA,ETC,XLM,TRX,XMR,XTZ,DASH,LINK,LEO,ATOM,NEO,HEDG,HT,MIOTA,CRO,MKR,ZEC,USDC,ONT,XEM,VET,BAT,DOGE,FTT,PAX,BTG,DCR,QTUM,SNX,REP,RVN,ZRX,TUSD,MOF,ALGO,SXP,OKB,BCD,OMG,ZB,HOT,DAI,LSK,ICX,NANO,THETA,KCS,WAVES,ZEN,BTM,DGB,CKB,CENNZ,SEELE,MONA,MCO,BTT,ENJ,KMD,IOST,NEXO,HC,SC,VSYS,DGD,DX,STEEM,XVG,LUNA,ABBC,BTS,BCN,AE,ZIL,KNC,XZC,RIF,QNT,MAID,NRG,MATIC,ARDR,YAP,RLC,ETN,CRPT,GNT,SNT,MANA,SOLVE,ADK&tsyms=USD,EUR")
+	price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,BNB,XRP,USDT,ADA,DOT,UNI,LTC,LINK,THETA,BCH,XLM,USDC,FIL,TRX,WBTC,DOGE,KLAY,SOL,VET,BTT,LUNA,EOS,CRO,MIOTA,XMR,BSV,AAVE,XTZ,NEO,FTT,ATOM,BUSD,HOT,AVAX,KSM,XEM,ALGO,DAI,EGLD,HT,CAKE,DASH,BTCB,CHZ,HBAR,ENJ,COMP,DCR,SNX,RUNE,ZIL,ETC,MKR,NEAR,GRT,LEO,STX,ZEC,TFUEL,BAT,SUSHI,MATIC,CEL,UST,NPXS,YFI,DENT,ONE,RVN,MANA,NEXO,ONT,QTUM,ICX,UMA,HNT,ZRX,SC,OMG,WAVES,BTG,BNT,FLOW,DGB,OKB,CHSB,FTM,REV,RSR,ANKR,REN,CFX,WRX,AR,1INCH,VGX,BTMX,PAX&tsyms=USD,EUR")
 	price = json.loads(price_request.content)
 
 	#get crypto news
@@ -24,5 +24,5 @@ def prices(request):
 		return render(request, 'prices.html', {'quote': quote, 'crypto' : crypto})
 
 	else:
-		notfound = "Enter a crypto currency symbol into search form.(e.g) btc,eth,ltc"
+		notfound = "Enter a crypto currency symbol into search form.(e.g) btc,eth,bnb"
 		return render(request, 'prices.html', {'notfound' : notfound})
