@@ -12,19 +12,9 @@
 
 	{% for key, value in crypto.DISPLAY.items %}
 
-<style>
-  .jumbotron{
-    background-color:#1a2421 !important;
-	color: #ffffff;
-
-
-}
-</style>
-
-<br><br>
-		<div class="jumbotron">
+		<div class="alert alert-success">
 		
-			  <h1 class="display-4">{{ key }}</h1>
+			  <h1>{{ key }}</h1>
 			  <strong>Price</strong>: {{ value.USD.PRICE }}<br/>
 			  <strong>Day High</strong>: {{ value.USD.HIGHDAY }}<br/>
 			  <strong>Day Low</strong>: {{ value.USD.LOWDAY }}<br/>
