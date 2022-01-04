@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+import crypto
+
 def home(request):
 	import requests
 	import json
@@ -26,3 +28,11 @@ def prices(request):
 	else:
 		notfound = "Enter a crypto currency symbol into search form.(e.g) btc,eth,bnb"
 		return render(request, 'prices.html', {'notfound' : notfound})
+
+
+def news(request):
+	import requests
+	import json
+	api_request = requests.get("https://min-api.cryptocompare.com/data/v2/news/?lang=EN")
+	api = json.loads(api_request.content)
+	return render(request, 'news.html', {'api' : api})

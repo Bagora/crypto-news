@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="text-center" style="margin-bottom:0">
-<h1 class="alert alert-primary">Today's Cryptocurrency Prices by Market Cap</h1>
+<h1 class="alert alert-success">Today's Cryptocurrency Prices by Market Cap</h1>
 </div>
 <br/>
 
@@ -36,24 +36,6 @@
   
   </tbody>
 </table>
-<br></br>
 
-<div class="container">
-	<div class="row">
-	{% for x in api.Data %}
-		<div class="col-sm">
-		<div class="card" style="width: 12rem;">
-				<img src="{{ x.imageurl }}" class="card-img-top" alt="{{ x.source }}">
-			  		<div class="card-body">
-					<h5 class="card-title">{{ x.title }}</h5>
-			    	<a href= "{{ x.url }}" class="btn btn-primary">Read More</a>
-				</div>
-			</div>
-			<br/>
-		</div> 
-	{% endfor %}
-
-	</div>
-</div>
 
 {% endblock content %}
