@@ -25,11 +25,6 @@ def prices(request):
 		crypto = json.loads(crypto_request.content)
 		return render(request, 'prices.html', {'quote': quote, 'crypto' : crypto})
 
-	else:
-		notfound = "Enter a crypto currency symbol into search form.(e.g) btc,eth,bnb"
-		return render(request, 'prices.html', {'notfound' : notfound})
-
-
 def news(request):
 	import requests
 	import json

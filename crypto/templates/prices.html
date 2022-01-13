@@ -7,15 +7,14 @@
 		{{ notfound }}
 	{% else %}
 		{% if crypto.Response %}
-			Sorry, {{ quote }} doesn't exist.Please Try Again..
+		<div class="alert alert-info" role="alert">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
 		{% endif %}
 
 	{% for key, value in crypto.DISPLAY.items %}
+   
+	<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-border-blue">
 
-	    
-	<div class="w3-panel w3-center w3-border w3-topbar w3-bottombar w3-border-green">
-
-			  <h1 style="color:#013220;">{{ key }}</h1>
+			  <h1>{{ key }}</h1>
 			  <strong>Price</strong>: {{ value.USD.PRICE }}<br/>
 			  <strong>Day High</strong>: {{ value.USD.HIGHDAY }}<br/>
 			  <strong>Day Low</strong>: {{ value.USD.LOWDAY }}<br/>
@@ -25,7 +24,6 @@
 			  
 			  
 		</div>
-	 
 
 	{% endfor %}
 
