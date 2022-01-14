@@ -7,12 +7,12 @@
 		{{ notfound }}
 	{% else %}
 		{% if crypto.Response %}
-		<div class="alert alert-danger" role="alert">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
+		<div class="alert alert-info" role="alert">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
 		{% endif %}
 
 	{% for key, value in crypto.DISPLAY.items %}
    
-	<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-border-black">
+	<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-border-green">
 
 			  <h1>{{ key }}</h1>
 			  <strong>Price</strong>: {{ value.USD.PRICE }}<br/>
