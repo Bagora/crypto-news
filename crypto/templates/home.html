@@ -5,13 +5,12 @@
 <table class="w3-center table table-bordered table-hover">
 
 <tr style="background-color:#90CAF9">
-      <th scope="col">Coin</th>
+      <th scope="col">Symbol</th>
       <th scope="col">Price</th>
       <th scope="col">24h High</th>
       <th scope="col">24h Low</th>
-      <th scope="col">Market Cap</th>
-	  <th scope="col">Circulating Supply</th>
-    </tr>
+	    <th scope="col">Circulating Supply</th>
+</tr>
   </thead>
  <tbody>
    
@@ -22,8 +21,7 @@
 	      <td>{{ value.USD.PRICE }}</td>
 	      <td>{{ value.USD.HIGHDAY }}</td>
 	      <td>{{ value.USD.LOWDAY }}</td>
-	      <td>{{ value.USD.MKTCAP }}</td>
-		  <td>{{ value.USD.SUPPLY }}</td>
+		    <td>{{ value.USD.SUPPLY }}</td>
     </tr>
   {% endfor %}
   
