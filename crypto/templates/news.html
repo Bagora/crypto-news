@@ -2,26 +2,26 @@
 
 {% block content %}
 
-<h2 class="w3-container w3-black w3-center">Current Market News</h2>
-{% for x in api.Data %}
-<body>
-	<div class="w3-container">
-	<div class="w3-card-4" style="width:50%">
-		<header class="w3-container w3-black">
-		  <h3>{{ x.title }}</h3>
-		</header>
-		<div class="w3-container">
-		  <br>
-		  <img src="{{ x.imageurl }}" alt="{{ x.source }}" class="w3-left w3-circle w3-margin-right" style="width:60px">
-		   <p>{{ x.body }}</p><br>
-		</div>
-		<button class="btn w3-block"><a href="{{ x.url }}" class="btn btn-success">Read More</a></button>
-		
-	  </div>
-	</div>
-	
-	</body>
-	<br><br>
+<div class="w3-container">
+	{% for x in api.Data %}
+	<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-bottombar w3-border-brown">
+		<header class="w3-container w3-brown">
+			<h3>{{ x.title }}</h3>
+		  </header><br>
+				<img src="{{ x.imageurl }}" class="panel-img" alt="{{ x.source }}" class="w3-left w3-circle w3-margin-right" style="width:60px">
+			  		<div class="panel-body">
+					<p class="panel-text">{{ x.body }}</p><br>
+					<a href= "{{ x.url }}" class="btn btn-success">Read More<br></a>
+					
+				</div>
+			</div>
+				
+				<br/>
+				<br>
+
 	{% endfor %}
 
-	{% endblock content %}
+</div>
+</div>
+
+{% endblock content %}

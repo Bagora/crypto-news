@@ -16,16 +16,16 @@
     <title>CoinDekho</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-xl navbar-light">
+    <nav class="navbar navbar-expand navbar-dark w3-brown">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}" style="padding: 8px; border: 4px solid black;">CoinDekho</a>
+        <a class="navbar-brand" href="{% url 'home' %}">btc<sub>crypto</sub></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'news' %}" style="padding: 8px; border: 4px solid black;">Market News</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'news' %}">Market<sub>News</sub></a>
             </li>
             </ul>
           <form class="d-flex" method="POST" action="{% url 'prices' %}">

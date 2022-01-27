@@ -12,19 +12,18 @@
 
 	{% for key, value in crypto.DISPLAY.items %}
    
-	<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-border-green">
-
-			  <h1>{{ key }}</h1>
+	<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-bottombar w3-border-brown">
+		<header class="w3-container w3-brown">
+			<h3>{{ key }}</h3>
+		</header>
 			  <strong>Price</strong>: {{ value.USD.PRICE }}<br/>
 			  <strong>Day High</strong>: {{ value.USD.HIGHDAY }}<br/>
 			  <strong>Day Low</strong>: {{ value.USD.LOWDAY }}<br/>
 			  <strong>Market Cap</strong>: {{ value.USD.MKTCAP }}<br/>
 			  <strong>Total Volume 24h</strong>: {{ value.USD.TOTALVOLUME24H}}<br/>
 			  <strong>Supply</strong>: {{ value.USD.SUPPLY }}<br/>
-			  <strong>Link</strong>: {{value.USD.LINK}}
 			  
-			  
-		</div>
+	</div>
 
 	{% endfor %}
 
