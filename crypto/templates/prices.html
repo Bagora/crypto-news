@@ -7,7 +7,7 @@
 		{{ notfound }}
 	{% else %}
 		{% if crypto.Response %}
-		<div class="alert" role="alert" style="background-color:#90CAF9">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
+		<div class="alert w3-brown">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
 		{% endif %}
 
 	{% for key, value in crypto.DISPLAY.items %}
