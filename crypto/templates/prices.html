@@ -9,11 +9,10 @@
 		<div class="alert w3-blue">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
 		{% endif %}
 
-		<body>
-			<div class="container">
-			<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-bottombar w3-border-blue">
+			<div class="w3-container">
+				<div class="w3-card-4 w3-center w3-sand" style="width:25%">
 		<!-- Currency Converter  -->
-		<header class="w3-container w3-blue">
+		<header class="w3-container w3-center">
 			<h3>Currency Converter</h3>
 		  </header><br>
 			<div class="container">
@@ -37,7 +36,7 @@
 									<span class="input-group-text">From</span>
 								</div>
 								<select class="form-control from" id="sel1">
-									<option value="">Select One …</option>
+									<option value="">Select</option>
 									<option value="USD">USD</option>
 									<option value="INR">INR</option>
 							
@@ -51,7 +50,7 @@
 									<span class="input-group-text">To</span>
 								</div>
 								<select class="form-control to" id="sel2">
-									<option value="">Select One …</option>
+									<option value="">Select</option>
 									<option value="INR">INR</option>
 									<option value="USD">USD</option>
 								
@@ -62,14 +61,15 @@
 		
 					<div class="text-center">
 		  
+						<div class="w3-section">
 						<!-- convert button -->
-						<button class="btn btn-primary convert m-2" 
+						<button class="w3-btn w3-blue btn-primary convert m-2" 
 								type="submit">
 							 Convert
 					  </button>
 		  
 						<!-- reset button -->
-						<button class="btn btn-primary m-2" 
+						<button class="w3-btn w3-blue btn-primary m-2" 
 								onclick="clearVal()">
 						   Reset
 					  </button>
@@ -89,8 +89,7 @@
 			</div>
 		</div>
 		</div>
-		</body>
-		  
+	</div>
 			<!-- linking script.js file -->
 			<script src="script.js"></script>
 		<script>
