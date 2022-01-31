@@ -22,7 +22,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <br>
       <li class="nav-item">
         <a class="nav-link w3-btn w3-blue" href="{% url 'news' %}">Market News</a>
       </li>
@@ -31,7 +30,6 @@
     <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'prices' %}">
       {% csrf_token %}
       <input class="form-control mr-sm-2" type="search" placeholder="btc,eth,bnb" aria-label="Search" name="quote">
-      <br>
       <button class="w3-btn w3-blue">Search</button>
     </form>
   </div>
