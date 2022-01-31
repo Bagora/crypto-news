@@ -5,14 +5,14 @@
 <div class="container">
 	{% for x in api.Data %}
 		<div class="col">
-		<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-bottombar w3-border-blue">
-			<header class="w3-container w3-blue">
+		<div class="w3-panel w3-center w3-border w3-leftbar w3-rightbar w3-bottombar w3-border-brown">
+			<header class="w3-container w3-brown">
 				<h3>{{ x.title }}</h3>
 		  	</header><br>
 				<img src="{{ x.imageurl }}" class="panel-img" alt="{{ x.source }}" class="w3-left w3-circle w3-margin-right" style="width:60px">
 			  		<div class="panel-body">
 					<p class="panel-text">{{ x.body }}</p><br>
-					<a href= "{{ x.url }}" class="w3-btn w3-blue">Read More<br></a>
+					<a href= "{{ x.url }}" class="w3-btn w3-brown">Read More<br></a>
 					
 	</div>
 		</div>
