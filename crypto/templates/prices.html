@@ -6,169 +6,26 @@
 		{{ notfound }}
 	{% else %}
 		{% if crypto.Response %}
-		<div class="alert w3-blue">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
-		{% endif %}
+		<div class="alert alert-danger">sorry, {{ quote }} doesn't exist. Please enter a valid cryptocurrency symbol.</div>
+	{% endif %}
 	
 	{% for key, value in crypto.DISPLAY.items %}
-   
-	<div class="w3-panel w3-center w3-border w3-bottombar w3-border-brown">
-		<header class="w3-container w3-brown">
-			<h3>{{ key }}</h3>
-		</header>
-			  <strong>Price</strong>: {{ value.USD.PRICE }}<br/>
-			  <strong>Day High</strong>: {{ value.USD.HIGHDAY }}<br/>
-			  <strong>Day Low</strong>: {{ value.USD.LOWDAY }}<br/>
-			  <strong>Change 24h</strong>: {{ value.USD.CHANGE24HOUR }}<br/>
-			  <strong>Market Cap</strong>: {{ value.USD.MKTCAP }}<br/>
-			  <strong>Total Supply</strong>: {{ value.USD.SUPPLY }}<br/>
-			  
-	</div>
+
+	<div class="card" id = 'call' style="width: 18rem;">
+		<div class="card-header alert-success">
+			<h2>{{ key }}</h2>
+		</div>
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Price: {{ value.USD.PRICE }}</li>
+		  <li class="list-group-item">Day High: {{ value.USD.HIGHDAY }}</li>
+		  <li class="list-group-item">Day Low: {{ value.USD.LOWDAY }}</li>
+		  <li class="list-group-item">Change 24h: {{ value.USD.CHANGE24HOUR }}</li>
+		  <li class="list-group-item">Market Cap: {{ value.USD.MKTCAP }}</li>
+		  <li class="list-group-item">Total Supply: {{ value.USD.SUPPLY }}</li>
+		</ul>
+	  </div>
 
 	{% endfor %}
 
 	{% endif %}
-
-	
-	<div class="w3-container">
-		<div class="w3-card-4 w3-center" style="background-color:#f5f5f5;">
-<!-- Currency Converter  -->
-<header class="w3-container w3-center">
-	<h3>Currency Converter</h3>
-  </header><br>
-	<div class="container">
-  
-		<div class="main">
-  
-			<div class="form-group">
-				<label for="oamount">
-					Amount to Convert
-				</label>
-				<input type="text" 
-					   class="form-control searchBox" 
-					   placeholder="0.00" 
-					   id="oamount">
-			</div>
-  
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text">From</span>
-						</div>
-						<select class="form-control from" id="sel1">
-							<option value="">Select</option>
-							<option value="USD">USD</option>
-							<option value="INR">INR</option>
-					
-						</select>
-					</div>
-				</div>
-				
-				<div class="col-sm-6">
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text">To</span>
-						</div>
-						<select class="form-control to" id="sel2">
-							<option value="">Select</option>
-							<option value="INR">INR</option>
-							<option value="USD">USD</option>
-						
-						</select>
-					</div>
-				</div>
-			</div>
-
-			<div class="text-center">
-  
-				<div class="w3-section">
-				<!-- convert button -->
-				<button class="w3-btn w3-blue btn-primary convert m-2" 
-						type="submit">
-					 Convert
-			  </button>
-  
-				<!-- reset button -->
-				<button class="w3-btn w3-blue btn-primary m-2" 
-						onclick="clearVal()">
-				   Reset
-			  </button>
-			</div>
-  
-		</div>
-  
-		<div id="finalAmount" class="text-center">
-  
-			<!-- Display the converted amount -->
-			<h2>
-				<span class="finalValue" 
-					  style="color:black;">
-		   </span>
-			</h2>
-		</div>
-	</div>
-</div>
-</div>
-</div>
-	<!-- linking script.js file -->
-	<script src="script.js"></script>
-<script>
-// include api for currency change
-const api = "https://api.exchangerate-api.com/v4/latest/USD";
-
-// for selecting different controls
-var search = document.querySelector(".searchBox");
-var convert = document.querySelector(".convert");
-var fromCurrecy = document.querySelector(".from");
-var toCurrecy = document.querySelector(".to");
-var finalValue = document.querySelector(".finalValue");
-var finalAmount = document.getElementById("finalAmount");
-var resultFrom;
-var resultTo;
-var searchValue;
-
-// Event when currency is changed
-fromCurrecy.addEventListener('change', (event) => {
-	resultFrom = `${event.target.value}`;
-});
-
-// Event when currency is changed
-toCurrecy.addEventListener('change', (event) => {
-	resultTo = `${event.target.value}`;
-});
-
-search.addEventListener('input', updateValue);
-
-// function for updating value
-function updateValue(e) {
-	searchValue = e.target.value;
-}
-
-// when user clicks, it calls function getresults
-convert.addEventListener("click", getResults);
-
-// function getresults
-function getResults() {
-	fetch(`${api}`)
-		.then(currency => {
-			return currency.json();
-		}).then(displayResults);
-}
-
-// display results after convertion
-function displayResults(currency) {
-	let fromRate = currency.rates[resultFrom];
-	let toRate = currency.rates[resultTo];
-	finalValue.innerHTML =
-	((toRate / fromRate) * searchValue).toFixed(2);
-	finalAmount.style.display = "block";
-}
-
-// when user click on reset button
-function clearVal() {
-	window.location.reload();
-	document.getElementsByClassName("finalValue").innerHTML = "";
-};
-</script>
-
 {% endblock content %}

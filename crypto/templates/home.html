@@ -2,14 +2,15 @@
 
 {% block content %}
 
-<table class="w3-center table table-bordered table-hover" style="background-color:#f5f5f5">
+<h2>Top 100 Coins</h2>
 
-<tr class="w3-blue">
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">24h High</th>
-      <th scope="col">24h Low</th>
-	    <th scope="col">Total Supply</th>
+<table class="table table-primary table-striped">
+
+<tr class="table-success">
+      <th scope="col"><h2>Name</h2></th>
+      <th scope="col"><h2>Price</h2></th>
+      <th scope="col"><h2>24h High</h2></th>
+      <th scope="col"><h2>24h Low</h2></th>
 </tr>
   </thead>
  <tbody>
@@ -21,7 +22,6 @@
 	      <td>{{ value.USD.PRICE }}</td>
 	      <td>{{ value.USD.HIGHDAY }}</td>
 	      <td>{{ value.USD.LOWDAY }}</td>
-		    <td>{{ value.USD.SUPPLY }}</td>
     </tr>
   {% endfor %}
   
