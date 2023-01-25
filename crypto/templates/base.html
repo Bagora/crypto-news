@@ -81,7 +81,7 @@ main {
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'news' %}">News</a></li>
       <form class="form" method="POST" action="{% url 'prices' %}" >
-        {% csrf_token %}
+            {% csrf_token %}
         <input class="form" type="search" placeholder="btc,eth,bnb" aria-label="Search" name="quote">
         <button class="btn btn-primary" type="submit">Search</button>
       </form>
